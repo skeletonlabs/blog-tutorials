@@ -1,34 +1,31 @@
 <script lang="ts">
-	import { writable, type Writable } from 'svelte/store';
 	import { page } from '$app/stores';
 
-	// Skeeton Features:
+	// Skeleton Features
 	import { AppShell, AppBar } from '@brainandbones/skeleton';
 	import { Drawer } from '@brainandbones/skeleton';
 
-	// Components
+	// Local Features
 	import Navigation from '$lib/Navigation/Navigation.svelte';
+	import { storeDrawer } from '$lib/Navigation/stores';
 
-	// Stylesheets:
+	// Stylesheets
 	import '@brainandbones/skeleton/themes/theme-skeleton.css';
 	import '@brainandbones/skeleton/styles/all.css';
 	import '../app.postcss';
-
-	// Stores
-	const storeDrawer: Writable<boolean> = writable(false);
 
 	function drawerOpen(): void {
 		storeDrawer.set(true);
 	}
 
-	// Reactive
+	// Reactive Properties
 	$: classesSidebarLeft = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
 </script>
 
 <!-- Drawer -->
-<Drawer open={storeDrawer} position="left" class="[&>.drawer]:space-y-4">
-	<!-- <h2 class="p-4">Navigation</h2> -->
-	<!-- <hr /> -->
+<Drawer open={storeDrawer} position="left">
+	<h2 class="p-4">Navigation</h2>
+	<hr />
 	<Navigation />
 </Drawer>
 
