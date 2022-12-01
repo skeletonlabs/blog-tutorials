@@ -2,16 +2,16 @@
 	import { page } from '$app/stores';
 
 	// Skeleton Features
-	import { AppShell, AppBar } from '@brainandbones/skeleton';
-	import { Drawer } from '@brainandbones/skeleton';
+	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { Drawer } from '@skeletonlabs/skeleton';
 
 	// Local Features
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 	import { storeDrawer } from '$lib/Navigation/stores';
 
 	// Stylesheets
-	import '@brainandbones/skeleton/themes/theme-skeleton.css';
-	import '@brainandbones/skeleton/styles/all.css';
+	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
+	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
 
 	function drawerOpen(): void {
