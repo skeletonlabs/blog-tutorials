@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}', require('path').join(require.resolve('@brainandbones/skeleton'), '../**/*.{html,js,svelte,ts}')],
+	content: ['./src/**/*.{html,js,svelte,ts}', require('path').join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')],
 	theme: {
 		extend: {},
 	},
-	plugins: [require('@brainandbones/skeleton/tailwind/theme.cjs')],
+	plugins: [require('@skeletonlabs/skeleton/tailwind/theme.cjs')],
 }
