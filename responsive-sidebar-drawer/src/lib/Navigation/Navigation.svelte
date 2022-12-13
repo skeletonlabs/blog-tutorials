@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { storeDrawer } from '$lib/Navigation/stores';
+	import { drawerStore } from '@skeletonlabs/skeleton';
 
 	function drawerClose(): void {
-		storeDrawer.set(false);
+		drawerStore.close();
 	}
 </script>
 

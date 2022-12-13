@@ -3,11 +3,10 @@
 
 	// Skeleton Features
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import { Drawer } from '@skeletonlabs/skeleton';
+	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 
 	// Local Features
 	import Navigation from '$lib/Navigation/Navigation.svelte';
-	import { storeDrawer } from '$lib/Navigation/stores';
 
 	// Stylesheets
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
@@ -15,7 +14,7 @@
 	import '../app.postcss';
 
 	function drawerOpen(): void {
-		storeDrawer.set(true);
+		drawerStore.open({});
 	}
 
 	// Reactive Properties
@@ -23,7 +22,7 @@
 </script>
 
 <!-- Drawer -->
-<Drawer open={storeDrawer} position="left">
+<Drawer>
 	<h2 class="p-4">Navigation</h2>
 	<hr />
 	<Navigation />
