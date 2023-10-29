@@ -3,19 +3,14 @@
 
 	// Skeleton Features
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
-
+	import { initializeStores, Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+	initializeStores();
+	const drawerStore = getDrawerStore();
+	
 	// Local Features
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 
-	// Stylesheets
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.postcss';
-
-	function drawerOpen(): void {
-		drawerStore.open({});
-	}
 
 	// Reactive Properties
 	$: classesSidebarLeft = $page.url.pathname === '/' ? 'w-0' : 'w-0 lg:w-64';
@@ -35,7 +30,7 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
-					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+					<button class="lg:hidden btn btn-sm mr-4" on:click={() => drawerStore.open()}>
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
@@ -44,7 +39,7 @@
 							</svg>
 						</span>
 					</button>
-					<strong class="text-xl uppercase">Skeleton</strong>
+					<a href="/" class="text-xl uppercase">Upmail</a>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
